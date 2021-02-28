@@ -6,8 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hackernight.newsapp.R
+import com.hackernight.newsapp.ui.NewsActivity
+import com.hackernight.newsapp.ui.viewmodel.NewsViewModel
 
+class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
-class BreakingNewsFragment : Fragment() {
+    lateinit var viewModel: NewsViewModel
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //get Fragment's Activity's viewmodel
+        viewModel = (activity as NewsActivity).viewModel
+    }
 
 }
