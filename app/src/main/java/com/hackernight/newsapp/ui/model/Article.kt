@@ -1,9 +1,13 @@
 package com.hackernight.newsapp.ui
 
-
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class Article(
+    @PrimaryKey(autoGenerate = true)
+    var id:Int? = null,
     @SerializedName("author")
     val author: String?,
     @SerializedName("content")
