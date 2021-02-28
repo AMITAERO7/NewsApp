@@ -1,4 +1,4 @@
-package com.hackernight.newsapp.ui
+package com.hackernight.newsapp.ui.model
 
 
 import com.google.gson.annotations.SerializedName

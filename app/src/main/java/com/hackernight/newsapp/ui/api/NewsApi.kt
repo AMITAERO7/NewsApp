@@ -1,6 +1,6 @@
 package com.hackernight.newsapp.ui.api
 
-import com.hackernight.newsapp.ui.NewsResponse
+import com.hackernight.newsapp.ui.model.NewsResponse
 import com.hackernight.newsapp.ui.util.Constants
 import retrofit2.Response
 import retrofit2.http.GET
