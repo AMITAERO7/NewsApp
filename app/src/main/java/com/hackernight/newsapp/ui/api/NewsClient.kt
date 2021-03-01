@@ -24,10 +24,11 @@ class NewsClient {
                 .client(client)
                 .build()
         }
-    }
 
-    val api by lazy {
-        retrofit.create(NewsApi::class.java)
+        val api by lazy {
+            retrofit.create(NewsApi::class.java)
+        }
+
     }
 
 }

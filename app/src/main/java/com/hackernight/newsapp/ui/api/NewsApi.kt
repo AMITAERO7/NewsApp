@@ -8,6 +8,8 @@ import retrofit2.http.Query
 
 interface NewsApi {
 
+    // http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=72e5121161c34a129d588e064e4d12d9
+
     @GET("v2/top-headlines")
     suspend fun getBreakingNews(
         @Query("country")
