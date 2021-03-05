@@ -36,7 +36,7 @@ class SearchNewsFragment : Fragment() {
 
         setUpRecyclerView()
 
-
+        //implement search fun with delay of 5 sec
         var job :Job? = null
 
         _binding?.etSearch?.addTextChangedListener { editable ->

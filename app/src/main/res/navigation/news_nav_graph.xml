@@ -19,6 +19,7 @@
             app:popEnterAnim="@anim/fragment_open_enter"
             app:popExitAnim="@anim/fragment_open_exit"/>
     </fragment>
+
     <fragment
         android:id="@+id/savedNewsFragment"
         android:name="com.hackernight.newsapp.ui.fragments.SavedNewsFragment"
@@ -32,6 +33,7 @@
             app:popEnterAnim="@anim/fragment_open_enter"
             app:popExitAnim="@anim/fragment_open_exit"/>
     </fragment>
+
     <fragment
         android:id="@+id/searchNewsFragment"
         android:name="com.hackernight.newsapp.ui.fragments.SearchNewsFragment"

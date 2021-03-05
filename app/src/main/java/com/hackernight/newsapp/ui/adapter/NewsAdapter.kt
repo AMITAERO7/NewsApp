@@ -25,6 +25,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
     //compares the two list and update only difference of two lists in background thread
     private val differCallBack = object :DiffUtil.ItemCallback<Article>(){
+
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.url == newItem.url
         }
@@ -32,6 +33,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
         override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem == newItem
         }
+
     }
 
     //to find the list difference
@@ -59,6 +61,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
                 }
             }
         }
+
     }
 
     override fun getItemCount(): Int {
@@ -70,4 +73,5 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
     fun setOnItemClickListener(listener : (Article) -> Unit) {
         onItemClickListener = listener
     }
+
 }

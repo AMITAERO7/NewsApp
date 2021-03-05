@@ -16,7 +16,7 @@ data class Article(
     val description: String?,
     @SerializedName("publishedAt")
     val publishedAt: String,
-    //Room doesn't understand Sorce type so added type converter such tha Source -> String and String -> Source
+    //TODO Room doesn't understand "Source" type so added type converter such tha Source -> String and String -> Source
     @SerializedName("source")
     val source: Source,
     @SerializedName("title")
