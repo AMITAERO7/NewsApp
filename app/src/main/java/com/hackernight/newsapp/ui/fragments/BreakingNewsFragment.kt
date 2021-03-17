@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hackernight.newsapp.R
 import com.hackernight.newsapp.databinding.FragmentBreakingNewsBinding
@@ -35,6 +36,16 @@ class BreakingNewsFragment : Fragment() {
 
         setUpRecyclerView()
 
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("article",it)
+            }
+            findNavController().navigate(
+                    R.id.action_breakingNewsFragment_to_articleFragment,
+                    bundle
+            )
+        }
+
         viewModel.breakingNews.observe(viewLifecycleOwner, Observer { response ->
             when (response) {
                 is Resource.Success -> {
@@ -46,7 +57,7 @@ class BreakingNewsFragment : Fragment() {
                 is Resource.Error -> {
                     hideProgress()
                     response.message?.let { message ->
-                       // Toast.makeText(requireContext(), "Error $message", Toast.LENGTH_SHORT).show()
+                       Toast.makeText(requireContext(), "Error $message", Toast.LENGTH_SHORT).show()
                     }
                 }
                 is Resource.Loading -> {

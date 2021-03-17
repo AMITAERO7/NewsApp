@@ -15,14 +15,6 @@ import com.hackernight.newsapp.ui.model.Article
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
-    inner class ArticleViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
-        var ivArticleImage = itemView.findViewById<ImageView>(R.id.ivArticleImage)
-        var tvSource = itemView.findViewById<TextView>(R.id.tvSource)
-        var tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
-        var tvDescription = itemView.findViewById<TextView>(R.id.tvDescription)
-        var tvPublishedAt = itemView.findViewById<TextView>(R.id.tvPublishedAt)
-    }
-
     //compares the two list and update only difference of two lists in background thread
     private val differCallBack = object :DiffUtil.ItemCallback<Article>(){
 
@@ -73,5 +65,17 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
     fun setOnItemClickListener(listener : (Article) -> Unit) {
         onItemClickListener = listener
     }
+
+
+
+
+    inner class ArticleViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
+        var ivArticleImage = itemView.findViewById<ImageView>(R.id.ivArticleImage)
+        var tvSource = itemView.findViewById<TextView>(R.id.tvSource)
+        var tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
+        var tvDescription = itemView.findViewById<TextView>(R.id.tvDescription)
+        var tvPublishedAt = itemView.findViewById<TextView>(R.id.tvPublishedAt)
+    }
+
 
 }

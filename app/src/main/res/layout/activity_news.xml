@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.NewsActivity">
 
-
     <fragment
         android:id="@+id/newsNavHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
